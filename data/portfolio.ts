@@ -19,7 +19,7 @@ export const experience = [
     company: "SurveySparrow",
     location: "Chennai, Tamil Nadu",
     period: "Feb 2024 – Present",
-    link: "https://thriveapp.me",
+    link: "https://surveysparrow.com",
     highlights: [
       "Designed and built ThriveSparrow end-to-end — a scalable SaaS product contributing to $1M in ARR by aligning technical execution with business goals.",
       "Integrated RESTful APIs and backend services, delivering modules that generated $100K+ in revenue with seamless UX.",
