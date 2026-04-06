@@ -70,7 +70,7 @@ export default function Sidebar() {
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-full overflow-hidden shrink-0 border" style={{ borderColor: "var(--color-border)" }}>
             <Image
-              src="/avatar.png"
+              src="/avatar.jpeg"
               alt={profile.name}
               width={36}
               height={36}
