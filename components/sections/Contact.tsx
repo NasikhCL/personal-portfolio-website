@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 import { Coffee } from "lucide-react";
 import { profile } from "@/data/portfolio";
 
@@ -121,9 +122,23 @@ export default function Contact() {
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="mt-12 pt-8 border-t flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
+        className="mt-12 pt-8 border-t flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
         style={{ borderColor: "var(--color-border)" }}
       >
+        {/* Avatar — mobile only */}
+        <div
+          className="lg:hidden w-32 h-32 rounded-2xl overflow-hidden shrink-0 border"
+          style={{ borderColor: "var(--color-border)" }}
+        >
+          <Image
+            src="/avatar.jpeg"
+            alt={profile.name}
+            width={128}
+            height={128}
+            className="w-full h-full object-cover object-top"
+          />
+        </div>
+
         <span
           className="text-xs font-mono"
           style={{ color: "var(--color-text-muted)" }}

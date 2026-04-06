@@ -50,7 +50,7 @@ export default function RootLayout({
         </div>
 
         {/* Desktop layout */}
-        <div className="lg:mr-[260px]">
+        <div className="lg:mr-[260px] pt-14 lg:pt-0">
           <main className="min-h-screen">
             {children}
           </main>
