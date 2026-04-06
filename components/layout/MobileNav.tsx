@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Mail, Coffee } from "lucide-react";
+import { Coffee } from "lucide-react";
 import { profile } from "@/data/portfolio";
 import ThemeToggle from "./ThemeToggle";
 
@@ -151,7 +151,7 @@ export default function MobileNav() {
           {[
             { href: profile.linkedin, label: "LinkedIn", content: <span className="text-xs">in</span> },
             { href: profile.github, label: "GitHub", content: <span className="text-xs">gh</span> },
-            { href: `mailto:${profile.email}`, label: "Email", content: <Mail size={13} strokeWidth={1.5} /> },
+            { href: `mailto:${profile.email}`, label: "Email", content: <span className="text-xs">@</span> },
             { href: profile.buymeacoffee, label: "Buy Me a Coffee", content: <Coffee size={13} strokeWidth={1.5} /> },
           ].map(({ href, label, content }) => (
             <a
