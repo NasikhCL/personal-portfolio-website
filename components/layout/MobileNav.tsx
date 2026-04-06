@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { Mail, Coffee } from "lucide-react";
 import { profile } from "@/data/portfolio";
 import ThemeToggle from "./ThemeToggle";
 
@@ -144,6 +145,37 @@ export default function MobileNav() {
             </p>
           </div>
         </a>
+
+        {/* Social icons */}
+        <div className="flex items-center gap-2">
+          {[
+            { href: profile.linkedin, label: "LinkedIn", content: <span className="text-xs">in</span> },
+            { href: profile.github, label: "GitHub", content: <span className="text-xs">gh</span> },
+            { href: `mailto:${profile.email}`, label: "Email", content: <Mail size={13} strokeWidth={1.5} /> },
+            { href: profile.buymeacoffee, label: "Buy Me a Coffee", content: <Coffee size={13} strokeWidth={1.5} /> },
+          ].map(({ href, label, content }) => (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith("mailto") ? undefined : "_blank"}
+              rel="noopener noreferrer"
+              aria-label={label}
+              onClick={() => setOpen(false)}
+              className="w-8 h-8 rounded-md border flex items-center justify-center transition-all duration-150"
+              style={{ borderColor: "var(--color-border)", color: "var(--color-text-secondary)" }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.backgroundColor = "var(--color-surface)";
+                (e.currentTarget as HTMLElement).style.color = "var(--color-text-primary)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
+                (e.currentTarget as HTMLElement).style.color = "var(--color-text-secondary)";
+              }}
+            >
+              {content}
+            </a>
+          ))}
+        </div>
       </div>
     </>
   );
