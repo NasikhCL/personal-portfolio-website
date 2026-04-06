@@ -66,8 +66,27 @@ export default function Sidebar() {
         {/* Divider */}
         <div className="border-t" style={{ borderColor: "var(--color-border)" }} />
 
-        {/* Profile */}
-        <div className="flex items-center gap-3">
+        {/* Profile — hover anywhere to see photo tooltip */}
+        <div className="relative group/avatar flex items-center gap-3 cursor-default">
+          {/* Tooltip preview — pops up above on hover */}
+          <div
+            className="absolute bottom-12 left-0 w-44 rounded-xl overflow-hidden border opacity-0 scale-95 pointer-events-none group-hover/avatar:opacity-100 group-hover/avatar:scale-100 transition-all duration-200 z-50"
+            style={{
+              backgroundColor: "var(--color-surface)",
+              borderColor: "var(--color-border)",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.5)",
+            }}
+          >
+            <Image
+              src="/avatar.jpeg"
+              alt={profile.name}
+              width={176}
+              height={220}
+              className="w-full object-cover object-top"
+            />
+          </div>
+
+          {/* Small avatar circle */}
           <div className="w-9 h-9 rounded-full overflow-hidden shrink-0 border" style={{ borderColor: "var(--color-border)" }}>
             <Image
               src="/avatar.jpeg"
@@ -77,6 +96,7 @@ export default function Sidebar() {
               className="w-full h-full object-cover object-top"
             />
           </div>
+
           <div className="min-w-0">
             <p className="text-sm font-medium truncate" style={{ color: "var(--color-text-primary)" }}>
               {profile.displayName}
