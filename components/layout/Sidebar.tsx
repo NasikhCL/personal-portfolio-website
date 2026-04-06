@@ -1,6 +1,7 @@
 "use client";
 
 import { Home, Briefcase, Rocket, Layers, Mail, Coffee } from "lucide-react";
+import Image from "next/image";
 import { profile } from "@/data/portfolio";
 import ThemeToggle from "./ThemeToggle";
 
@@ -67,16 +68,14 @@ export default function Sidebar() {
 
         {/* Profile */}
         <div className="flex items-center gap-3">
-          {/* Avatar placeholder */}
-          <div
-            className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-semibold shrink-0 border"
-            style={{
-              backgroundColor: "var(--color-surface)",
-              borderColor: "var(--color-border)",
-              color: "var(--color-text-secondary)",
-            }}
-          >
-            N
+          <div className="w-9 h-9 rounded-full overflow-hidden shrink-0 border" style={{ borderColor: "var(--color-border)" }}>
+            <Image
+              src="/avatar.png"
+              alt={profile.name}
+              width={36}
+              height={36}
+              className="w-full h-full object-cover object-top"
+            />
           </div>
           <div className="min-w-0">
             <p className="text-sm font-medium truncate" style={{ color: "var(--color-text-primary)" }}>
