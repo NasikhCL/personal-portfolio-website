@@ -77,7 +77,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight mb-6"
+          className="text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight mb-6"
           style={{ color: "var(--color-text-primary)" }}
         >
           Hey, I&apos;m{" "}
