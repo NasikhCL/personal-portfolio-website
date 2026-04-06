@@ -33,7 +33,7 @@ export default function OpportunityCTA() {
       >
         <div className="flex items-center gap-3">
           <span
-            className="text-xs w-2 h-2 rounded-full bg-current animate-pulse"
+            className="text-xs w-2 h-2 rounded-full bg-current animate-pulse flex-shrink-0"
             style={{ color: "#4ade80" }}
           />
           <span
