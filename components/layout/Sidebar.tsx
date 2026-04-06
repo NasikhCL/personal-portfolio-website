@@ -1,6 +1,6 @@
 "use client";
 
-import { Home, Briefcase, Rocket, Layers, Mail } from "lucide-react";
+import { Home, Briefcase, Rocket, Layers, Mail, Coffee } from "lucide-react";
 import { profile } from "@/data/portfolio";
 import ThemeToggle from "./ThemeToggle";
 
@@ -150,6 +150,27 @@ export default function Sidebar() {
             }}
           >
             @
+          </a>
+          <a
+            href={profile.buymeacoffee}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Buy Me a Coffee"
+            className="w-8 h-8 rounded-md border flex items-center justify-center transition-all duration-150"
+            style={{
+              borderColor: "var(--color-border)",
+              color: "var(--color-text-secondary)",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.backgroundColor = "var(--color-surface)";
+              (e.currentTarget as HTMLElement).style.color = "var(--color-text-primary)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
+              (e.currentTarget as HTMLElement).style.color = "var(--color-text-secondary)";
+            }}
+          >
+            <Coffee size={13} strokeWidth={1.5} />
           </a>
         </div>
 

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { Coffee } from "lucide-react";
 import { profile } from "@/data/portfolio";
 
 export default function Contact() {
@@ -87,6 +88,30 @@ export default function Contact() {
             }}
           >
             LinkedIn ↗
+          </a>
+
+          <a
+            href={profile.buymeacoffee}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm border transition-all duration-200"
+            style={{
+              borderColor: "var(--color-border)",
+              color: "var(--color-text-secondary)",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.backgroundColor = "var(--color-surface-hover)";
+              (e.currentTarget as HTMLElement).style.color = "var(--color-text-primary)";
+              (e.currentTarget as HTMLElement).style.borderColor = "var(--color-text-muted)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
+              (e.currentTarget as HTMLElement).style.color = "var(--color-text-secondary)";
+              (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)";
+            }}
+          >
+            <Coffee size={14} strokeWidth={1.5} />
+            Buy me a coffee
           </a>
         </div>
       </motion.div>
