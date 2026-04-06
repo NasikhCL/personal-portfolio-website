@@ -43,7 +43,7 @@ export default function Contact() {
           className="text-sm leading-relaxed max-w-md mb-10"
           style={{ color: "var(--color-text-secondary)" }}
         >
-          I&apos;m open to frontend roles, freelance projects, and interesting collaborations.
+          I&apos;m open to Developer roles, freelance projects, and interesting collaborations.
           Drop me a message — I usually reply within a day.
         </p>
 
