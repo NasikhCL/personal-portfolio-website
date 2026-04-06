@@ -39,7 +39,8 @@ export default function MobileNav() {
         }}
       >
         {/* Logo */}
-        <span
+        <a
+          href="#home"
           className="text-2xl"
           style={{
             fontFamily: "var(--font-dancing-script)",
@@ -47,7 +48,7 @@ export default function MobileNav() {
           }}
         >
           {profile.displayName}
-        </span>
+        </a>
 
         {/* Hamburger */}
         <button

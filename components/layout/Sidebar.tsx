@@ -24,15 +24,16 @@ export default function Sidebar() {
     >
       {/* Logo */}
       <div className="px-7 pt-8 pb-6">
-        <span
-          className="text-3xl select-none"
+        <a
+          href="#home"
+          className="text-3xl"
           style={{
             fontFamily: "var(--font-dancing-script)",
             color: "var(--color-text-primary)",
           }}
         >
           {profile.displayName}
-        </span>
+        </a>
       </div>
 
       {/* Divider */}
