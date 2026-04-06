@@ -1,19 +1,47 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Home, Briefcase, Rocket, Layers, Mail, Coffee } from "lucide-react";
 import Image from "next/image";
 import { profile } from "@/data/portfolio";
 import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
-  { label: "Home", href: "#home", Icon: Home },
-  { label: "Work", href: "#work", Icon: Briefcase },
-  { label: "Projects", href: "#projects", Icon: Rocket },
-  { label: "Skills", href: "#skills", Icon: Layers },
-  { label: "Contact", href: "#contact", Icon: Mail },
+  { label: "Home", href: "#home", id: "home", Icon: Home },
+  { label: "Work", href: "#work", id: "work", Icon: Briefcase },
+  { label: "Projects", href: "#projects", id: "projects", Icon: Rocket },
+  { label: "Skills", href: "#skills", id: "skills", Icon: Layers },
+  { label: "Contact", href: "#contact", id: "contact", Icon: Mail },
 ];
 
+function useActiveSection() {
+  const [active, setActive] = useState("home");
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    navLinks.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActive(id);
+        },
+        { rootMargin: "-40% 0px -55% 0px" }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
+
+  return active;
+}
+
 export default function Sidebar() {
+  const activeSection = useActiveSection();
+
   return (
     <aside
       className="fixed right-0 top-0 h-screen w-[260px] flex flex-col border-l"
@@ -41,25 +69,36 @@ export default function Sidebar() {
 
       {/* Navigation */}
       <nav className="px-5 pt-5 flex flex-col gap-0.5 flex-1">
-        {navLinks.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            className="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-150"
-            style={{ color: "var(--color-text-secondary)" }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.backgroundColor = "var(--color-surface)";
-              (e.currentTarget as HTMLElement).style.color = "var(--color-text-primary)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
-              (e.currentTarget as HTMLElement).style.color = "var(--color-text-secondary)";
-            }}
-          >
-            <link.Icon size={15} strokeWidth={1.5} className="opacity-60 shrink-0" />
-            <span>{link.label}</span>
-          </a>
-        ))}
+        {navLinks.map((link) => {
+          const isActive = activeSection === link.id;
+          return (
+            <a
+              key={link.href}
+              href={link.href}
+              className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-200"
+              style={{
+                backgroundColor: isActive ? "var(--color-surface)" : "transparent",
+                color: isActive ? "var(--color-text-primary)" : "var(--color-text-secondary)",
+                fontWeight: isActive ? 500 : 400,
+              }}
+              onMouseEnter={(e) => {
+                if (!isActive) {
+                  (e.currentTarget as HTMLElement).style.backgroundColor = "var(--color-surface)";
+                  (e.currentTarget as HTMLElement).style.color = "var(--color-text-primary)";
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (!isActive) {
+                  (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
+                  (e.currentTarget as HTMLElement).style.color = "var(--color-text-secondary)";
+                }
+              }}
+            >
+              <link.Icon size={15} strokeWidth={isActive ? 2 : 1.5} className={`shrink-0 ${isActive ? "opacity-100" : "opacity-60"}`} />
+              <span>{link.label}</span>
+            </a>
+          );
+        })}
       </nav>
 
       {/* Bottom block */}
