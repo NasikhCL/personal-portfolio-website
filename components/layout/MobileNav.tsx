@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { profile } from "@/data/portfolio";
 import ThemeToggle from "./ThemeToggle";
 
@@ -114,6 +115,35 @@ export default function MobileNav() {
         <div className="pt-2 border-t" style={{ borderColor: "var(--color-border)" }}>
           <ThemeToggle />
         </div>
+
+        {/* Profile block */}
+        <a
+          href="#avatar-footer"
+          onClick={() => setOpen(false)}
+          className="pt-2 border-t flex items-end gap-3"
+          style={{ borderColor: "var(--color-border)" }}
+        >
+          <div
+            className="w-10 h-10 rounded-xl overflow-hidden shrink-0 border"
+            style={{ borderColor: "var(--color-border)" }}
+          >
+            <Image
+              src="/avatar.jpeg"
+              alt={profile.name}
+              width={40}
+              height={40}
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+          <div className="min-w-0">
+            <p className="text-sm font-medium truncate" style={{ color: "var(--color-text-primary)" }}>
+              {profile.displayName}
+            </p>
+            <p className="text-xs truncate" style={{ color: "var(--color-text-secondary)" }}>
+              {profile.title}
+            </p>
+          </div>
+        </a>
       </div>
     </>
   );

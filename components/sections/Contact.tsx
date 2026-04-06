@@ -122,12 +122,11 @@ export default function Contact() {
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="mt-12 pt-8 border-t flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+        className="mt-12 pt-8 border-t flex flex-col gap-4"
         style={{ borderColor: "var(--color-border)" }}
       >
         {/* Avatar — mobile only */}
-        <div
-          className="lg:hidden w-32 h-32 rounded-2xl overflow-hidden shrink-0 border"
+        <div id="avatar-footer" className="lg:hidden w-32 h-32 rounded-2xl overflow-hidden shrink-0 border"
           style={{ borderColor: "var(--color-border)" }}
         >
           <Image
@@ -139,19 +138,21 @@ export default function Contact() {
           />
         </div>
 
-        <span
-          className="text-xs font-mono"
-          style={{ color: "var(--color-text-muted)" }}
-        >
-          Designed & Developed by{" "}
-          <span style={{ color: "var(--color-text-secondary)" }}>Nasikh Mahamood CL</span>
-        </span>
-        <span
-          className="text-xs font-mono"
-          style={{ color: "var(--color-text-muted)" }}
-        >
-          Built with Next.js · Tailwind CSS · Framer Motion
-        </span>
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-2 sm:gap-12">
+          <span
+            className="text-xs font-mono whitespace-nowrap"
+            style={{ color: "var(--color-text-muted)" }}
+          >
+            Designed & Developed by{" "}
+            <span style={{ color: "var(--color-text-secondary)" }}>Nasikh Mahamood CL</span>
+          </span>
+          <span
+            className="text-xs font-mono"
+            style={{ color: "var(--color-text-muted)" }}
+          >
+            Built with Next.js · Tailwind CSS · Framer Motion
+          </span>
+        </div>
       </motion.div>
     </section>
   );
