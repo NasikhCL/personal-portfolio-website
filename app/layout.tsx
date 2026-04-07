@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | Nasikh Mahamood CL",
   },
   description:
-    "Nasikh CL — Frontend Developer portfolio. ~3 years of experience building large-scale SaaS and edTech applications generating over $1M in revenue. Currently at SurveySparrow, Kerala, India.",
+    "Nasikh CL — Frontend Developer portfolio. 3 years building SaaS & edTech apps generating $1M+ revenue. React, TypeScript, Next.js. Kerala, India.",
   keywords: [
     "Nasikh Mahamood CL",
     "Nasikh CL",
