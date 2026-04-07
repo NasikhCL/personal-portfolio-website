@@ -27,10 +27,14 @@ export const metadata: Metadata = {
     template: "%s | Nasikh Mahamood CL",
   },
   description:
-    "Frontend Developer with ~3 years of experience building large-scale SaaS and edTech applications generating over $1M in revenue. Currently at SurveySparrow, Kerala, India.",
+    "Nasikh CL — Frontend Developer portfolio. ~3 years of experience building large-scale SaaS and edTech applications generating over $1M in revenue. Currently at SurveySparrow, Kerala, India.",
   keywords: [
     "Nasikh Mahamood CL",
     "Nasikh CL",
+    "Nasikh portfolio",
+    "Nasikh CL portfolio",
+    "Nasikh frontend developer",
+    "Nasikh developer portfolio",
     "Frontend Developer",
     "React Developer",
     "TypeScript",
@@ -47,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nasikh Mahamood CL — Frontend Developer",
     description:
-      "Frontend Developer building SaaS products that scale. ~3 years of experience. Currently at SurveySparrow.",
+      "Nasikh CL portfolio — Frontend Developer building SaaS products that scale. ~3 years of experience. Currently at SurveySparrow.",
     url: "https://nasikhcl.com",
     siteName: "Nasikh Mahamood CL",
     locale: "en_US",
@@ -95,7 +99,7 @@ export default function RootLayout({
     image: "https://nasikhcl.com/avatar.jpeg",
     jobTitle: "Frontend Developer",
     description:
-      "Frontend Developer with ~3 years of experience building large-scale SaaS and edTech applications generating over $1M in revenue.",
+      "Nasikh CL portfolio. Frontend Developer with ~3 years of experience building large-scale SaaS and edTech applications generating over $1M in revenue.",
     email: "nasikcl@gmail.com",
     address: {
       "@type": "PostalAddress",
