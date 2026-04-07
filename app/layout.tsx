@@ -21,15 +21,63 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "Nasikh Mahamood CL — Frontend Developer",
+  metadataBase: new URL("https://nasikhcl.com"),
+  title: {
+    default: "Nasikh Mahamood CL — Frontend Developer",
+    template: "%s | Nasikh Mahamood CL",
+  },
   description:
-    "Frontend Developer with ~3 years of experience building large-scale SaaS and edTech applications. Currently at SurveySparrow.",
-  keywords: ["Frontend Developer", "React", "TypeScript", "Next.js", "Portfolio"],
+    "Frontend Developer with ~3 years of experience building large-scale SaaS and edTech applications generating over $1M in revenue. Currently at SurveySparrow, Kerala, India.",
+  keywords: [
+    "Nasikh Mahamood CL",
+    "Nasikh CL",
+    "Frontend Developer",
+    "React Developer",
+    "TypeScript",
+    "Next.js",
+    "SaaS Developer",
+    "Kerala",
+    "India",
+    "SurveySparrow",
+    "ThriveSparrow",
+    "Portfolio",
+  ],
+  authors: [{ name: "Nasikh Mahamood CL", url: "https://nasikhcl.com" }],
+  creator: "Nasikh Mahamood CL",
   openGraph: {
     title: "Nasikh Mahamood CL — Frontend Developer",
     description:
-      "Frontend Developer building SaaS products that scale. Currently at SurveySparrow.",
+      "Frontend Developer building SaaS products that scale. ~3 years of experience. Currently at SurveySparrow.",
+    url: "https://nasikhcl.com",
+    siteName: "Nasikh Mahamood CL",
+    locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/avatar.jpeg",
+        width: 400,
+        height: 400,
+        alt: "Nasikh Mahamood CL — Frontend Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Nasikh Mahamood CL — Frontend Developer",
+    description: "Frontend Developer building SaaS products that scale.",
+    images: ["/avatar.jpeg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
+  },
+  alternates: {
+    canonical: "https://nasikhcl.com",
   },
 };
 
@@ -38,11 +86,57 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Nasikh Mahamood CL",
+    alternateName: "Nasikh CL",
+    url: "https://nasikhcl.com",
+    image: "https://nasikhcl.com/avatar.jpeg",
+    jobTitle: "Frontend Developer",
+    description:
+      "Frontend Developer with ~3 years of experience building large-scale SaaS and edTech applications generating over $1M in revenue.",
+    email: "nasikcl@gmail.com",
+    address: {
+      "@type": "PostalAddress",
+      addressRegion: "Kerala",
+      addressCountry: "IN",
+    },
+    sameAs: [
+      "https://linkedin.com/in/nasikh-cl",
+      "https://github.com/nasikhCL",
+      "https://buymeacoffee.com/nasikhcl",
+    ],
+    worksFor: {
+      "@type": "Organization",
+      name: "SurveySparrow",
+      url: "https://surveysparrow.com",
+    },
+    knowsAbout: [
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "Next.js",
+      "Tailwind CSS",
+      "Redux Toolkit",
+      "TanStack Query",
+      "Web Accessibility",
+      "Core Web Vitals",
+      "SaaS Development",
+    ],
+  };
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${dancingScript.variable} dark`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen transition-colors duration-300" style={{ backgroundColor: "var(--color-bg)", color: "var(--color-text-primary)" }}>
         {/* Mobile nav — visible on small screens */}
         <div className="lg:hidden">
