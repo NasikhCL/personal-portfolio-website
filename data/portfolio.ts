@@ -103,7 +103,14 @@ export const projects = [
     link: null,
     tags: ["React", "TypeScript", "Tailwind CSS"],
     status: "private" as const,
-
+  },
+  {
+    title: "Let’s Build Something",
+    description:
+      "Got an idea? I design, build, and ship complete products — not just UI. Fast, scalable, and production-ready. Lets build something great together.",
+    link: "mailto:nasikcl@gmail.com",
+    tags: ["Any Stack", "Your Idea"],
+    status: "open" as const,
   },
 ];
 

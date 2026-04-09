@@ -72,11 +72,11 @@ function ProjectCard({
               className="text-xs font-mono px-2 py-1 rounded-md border"
               style={{
                 borderColor: "var(--color-border)",
-                color: project.status === "live" ? "#4ade80" : "var(--color-text-muted)",
+                color: project.status === "live" ? "#4ade80" : project.status === "open" ? "#a78bfa" : "var(--color-text-muted)",
                 backgroundColor: "transparent",
               }}
             >
-              {project.status === "live" ? "● live" : `○ ${project.status}`}
+              {project.status === "live" ? "● live" : project.status === "open" ? "◌ open" : `○ ${project.status}`}
             </span>
           </div>
 
@@ -84,7 +84,16 @@ function ProjectCard({
           <div className="flex items-center gap-2">
             <h3
               className="text-base font-semibold"
-              style={{ color: "var(--color-text-primary)" }}
+              style={{
+                color: project.status === "open"
+                  ? "transparent"
+                  : "var(--color-text-primary)",
+                background: project.status === "open"
+                  ? "linear-gradient(90deg, #a78bfa, #818cf8)"
+                  : "none",
+                WebkitBackgroundClip: project.status === "open" ? "text" : "unset",
+                backgroundClip: project.status === "open" ? "text" : "unset",
+              }}
             >
               {project.title}
             </h3>
