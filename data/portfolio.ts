@@ -9,7 +9,7 @@ export const profile = {
   linkedin: "https://linkedin.com/in/nasikh-cl",
   github: "https://github.com/nasikhCL",
   buymeacoffee: "https://buymeacoffee.com/nasikhcl",
-  location: "Kerala, India",
+  location: "India",
   phone: "+91-9539107700",
 };
 
