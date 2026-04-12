@@ -57,6 +57,7 @@ export const experience = [
 export const skills = {
   Languages: ["JavaScript", "TypeScript", "HTML", "CSS"],
   Frameworks: ["React", "Next.js", "Redux Toolkit", "TanStack Query", "Zustand"],
+  Backend: ["Node.js", "Express.js", "MongoDB", "Redis", "REST APIs"],
   Styling: ["Tailwind CSS", "Twigs UI", "Shadcn UI"],
   Tools: ["Git", "GitHub", "Bitbucket", "Webpack", "Cursor", "Figma"],
   "A11Y & Perf": ["WCAG", "Core Web Vitals", "ARIA", "Lighthouse"],
