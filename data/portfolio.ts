@@ -69,7 +69,7 @@ export const featured = {
   company: "SurveySparrow",
   description:
     "A full-featured HR SaaS platform built end-to-end, from architecture to shipping. Contributed to $1M in ARR through scalable front-end design, API integration, and performance engineering.",
-  link: "https://thrivesparrow.me",
+  link: "https://thrivesparrow.com",
 };
 
 export const projects = [
