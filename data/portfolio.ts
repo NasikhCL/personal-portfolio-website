@@ -33,19 +33,19 @@ export const experience = [
     location: "Delhi, India (Remote)",
     period: "Feb 2026 – June 2026",
     link: "https://www.kamyab.io/",
-highlights: [
-  "Served as a founding engineering member, contributing to product strategy, feature ideation, growth initiatives, and technical decision-making for an AI-powered NEET preparation platform.",
+    highlights: [
+      "Served as a founding engineering member, contributing to product strategy, feature ideation, growth initiatives, and technical decision-making for an AI-powered NEET preparation platform.",
 
-  "Rapidly built and shipped product features using AI-assisted development workflows with Cursor and Claude Code, developing both React/TypeScript frontend and Fastify backend services despite limited prior Fastify experience.",
+      "Rapidly built and shipped product features using AI-assisted development workflows with Cursor and Claude Code, developing both React/TypeScript frontend and Fastify backend services despite limited prior Fastify experience.",
 
-  "Designed and developed a fully responsive web application, focusing on scalability, usability, and an engaging learning experience for students preparing for competitive examinations.",
+      "Designed and developed a fully responsive web application, focusing on scalability, usability, and an engaging learning experience for students preparing for competitive examinations.",
 
-  "Collaborated on user acquisition, marketing experiments, and feature prioritization, leveraging partnerships with NEET educators, mentors, and student influencers to drive organic growth.",
+      "Collaborated on user acquisition, marketing experiments, and feature prioritization, leveraging partnerships with NEET educators, mentors, and student influencers to drive organic growth.",
 
-  "Scaled the platform to 10,000+ user sign-ins across India within two months of launch, with students attempting over 500,000 questions, demonstrating strong early-stage engagement and product value.",
+      "Scaled the platform to 10,000+ user sign-ins across India within two months of launch, with students attempting over 500,000 questions, demonstrating strong early-stage engagement and product value.",
 
-  "Gained firsthand experience in startup execution, balancing engineering, product thinking, growth initiatives, and monetization challenges while iterating quickly based on user feedback."
-]
+      "Gained firsthand experience in startup execution, balancing engineering, product thinking, growth initiatives, and monetization challenges while iterating quickly based on user feedback."
+    ]
   },
   {
     role: "Frontend Developer",
@@ -98,7 +98,7 @@ export const skills = {
 
 export const featured = {
   label: "CURRENTLY BUILDING",
-  title: "CAMS - India's Largest RTA",
+  title: "CAMS - India’s Largest RTA Platform’s workflows",
   company: "Computer Age Management Services Limited (CAMS)",
   description:
     "Computer Age Management Services Limited (CAMS) is India’s largest technology-driven financial infrastructure and Registrar and Transfer Agent (RTA) for mutual funds, holding almost 70% of the industry's average assets under management (AAUM). Headquartered in Chennai, it serves top Asset Management Companies (AMCs), Alternate Investment Funds (AIFs), and insurance firms.",
