@@ -107,6 +107,14 @@ export const featured = {
 
 export const projects = [
   {
+    title: "Kamyab Intelligence",
+    description:
+      "Founding member of Kamyab Intelligence pvt. ltd. — an AI-powered NEET preparation platform. Built end-to-end product features, scaled to 10,000+ users, and contributed to product strategy and growth.",
+    link: "https://www.kamyab.io/",
+    tags: ["React", "TypeScript", "Fastify", "AI", "EdTech"],
+    status: "live" as const,
+  },
+  {
     title: "ThriveSparrow",
     description:
       "People success platform built at SurveySparrow — end-to-end frontend ownership. Contributed to $1M in ARR through scalable architecture, API integration, and performance engineering.",
