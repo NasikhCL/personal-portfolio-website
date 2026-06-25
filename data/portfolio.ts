@@ -14,11 +14,44 @@ export const profile = {
 };
 
 export const experience = [
+    {
+    role: "Software Development Engineer II (SDE 2)",
+    company: "Computer Age Management Services Limited (CAMS)",
+    location: "Chennai, Tamil Nadu",
+    period: "June 2026 – Present",
+    link: "https://camsonline.com",
+    highlights: [
+      "Leading frontend development for CAMS, India's largest RTA, focusing on performance optimization and scalable architecture.",
+      "Building internal tools and dashboards to enhance operational efficiency and user experience.",
+      "Implementing advanced React patterns and state management solutions to enhance user experience and maintainability.",
+      "Collaborating with cross-functional teams to deliver high-quality software solutions that meet business objectives.",
+    ],
+  },
+  {
+    role: "Founding Member",
+    company: "Kamyab Intelligence Pvt. Ltd.",
+    location: "Delhi, India (Remote)",
+    period: "Feb 2026 – June 2026",
+    link: "https://www.kamyab.io/",
+highlights: [
+  "Served as a founding engineering member, contributing to product strategy, feature ideation, growth initiatives, and technical decision-making for an AI-powered NEET preparation platform.",
+
+  "Rapidly built and shipped product features using AI-assisted development workflows with Cursor and Claude Code, developing both React/TypeScript frontend and Fastify backend services despite limited prior Fastify experience.",
+
+  "Designed and developed a fully responsive web application, focusing on scalability, usability, and an engaging learning experience for students preparing for competitive examinations.",
+
+  "Collaborated on user acquisition, marketing experiments, and feature prioritization, leveraging partnerships with NEET educators, mentors, and student influencers to drive organic growth.",
+
+  "Scaled the platform to 10,000+ user sign-ins across India within two months of launch, with students attempting over 500,000 questions, demonstrating strong early-stage engagement and product value.",
+
+  "Gained firsthand experience in startup execution, balancing engineering, product thinking, growth initiatives, and monetization challenges while iterating quickly based on user feedback."
+]
+  },
   {
     role: "Frontend Developer",
     company: "SurveySparrow",
     location: "Chennai, Tamil Nadu",
-    period: "Feb 2024 – Present",
+    period: "Feb 2024 – Feb 2026",
     link: "https://surveysparrow.com",
     highlights: [
       "Designed and built ThriveSparrow end-to-end — a scalable SaaS product contributing to $1M in ARR by aligning technical execution with business goals.",
@@ -65,11 +98,11 @@ export const skills = {
 
 export const featured = {
   label: "CURRENTLY BUILDING",
-  title: "ThriveSparrow — People Success Platform",
-  company: "SurveySparrow",
+  title: "CAMS - India's Largest RTA",
+  company: "Computer Age Management Services Limited (CAMS)",
   description:
-    "A full-featured HR SaaS platform built end-to-end, from architecture to shipping. Contributed to $1M in ARR through scalable front-end design, API integration, and performance engineering.",
-  link: "https://thrivesparrow.com",
+    "Computer Age Management Services Limited (CAMS) is India’s largest technology-driven financial infrastructure and Registrar and Transfer Agent (RTA) for mutual funds, holding almost 70% of the industry's average assets under management (AAUM). Headquartered in Chennai, it serves top Asset Management Companies (AMCs), Alternate Investment Funds (AIFs), and insurance firms.",
+  link: "https://camsonline.com",
 };
 
 export const projects = [
