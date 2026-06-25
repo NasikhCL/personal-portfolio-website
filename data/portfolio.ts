@@ -107,7 +107,7 @@ export const featured = {
 
 export const projects = [
   {
-    title: "Kamyab Intelligence",
+    title: "Kamyab Intelligence Pvt. Ltd.",
     description:
       "Founding member of Kamyab Intelligence pvt. ltd. — an AI-powered NEET preparation platform. Built end-to-end product features, scaled to 10,000+ users, and contributed to product strategy and growth.",
     link: "https://www.kamyab.io/",
