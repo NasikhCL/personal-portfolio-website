@@ -1,10 +1,10 @@
 export const profile = {
   name: "Nasikh Mahamood CL",
   displayName: "Nasikh CL",
-  title: "Frontend Developer",
+  title: "Software Engineer",
   tagline: "Building SaaS products that scale.",
   summary:
-    "Frontend Developer with nearly 3 years of experience building large-scale SaaS and edTech applications. Product-focused, performance-obsessed, and always shipping.",
+    "Self-taught Software Engineer with nearly 3 years of experience building large-scale SaaS and edTech applications. Product-focused, performance-obsessed, and always shipping.",
   email: "nasikcl@gmail.com",
   linkedin: "https://linkedin.com/in/nasikh-cl",
   github: "https://github.com/nasikhCL",
