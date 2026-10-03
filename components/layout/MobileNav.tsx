@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Work", href: "#work" },
   { label: "Projects", href: "#projects" },
+  { label: "Blog", href: "https://blog.nasikhcl.com", external: true },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
@@ -106,11 +107,14 @@ export default function MobileNav() {
           <a
             key={link.href}
             href={link.href}
+            target={link.external ? "_blank" : undefined}
+            rel={link.external ? "noopener noreferrer" : undefined}
             onClick={() => setOpen(false)}
-            className="text-sm py-1"
+            className="text-sm py-1 flex items-center justify-between"
             style={{ color: "var(--color-text-secondary)" }}
           >
-            {link.label}
+            <span>{link.label}</span>
+            {link.external && <span className="text-xs opacity-50">↗</span>}
           </a>
         ))}
         <div className="pt-2 border-t" style={{ borderColor: "var(--color-border)" }}>

@@ -8,6 +8,7 @@ export const profile = {
   email: "nasikcl@gmail.com",
   linkedin: "https://linkedin.com/in/nasikh-cl",
   github: "https://github.com/nasikhCL",
+  blog: "https://blog.nasikhcl.com",
   buymeacoffee: "https://buymeacoffee.com/nasikhcl",
   location: "India",
   phone: "+91-9539107700",
@@ -120,6 +121,14 @@ export const projects = [
       "People success platform built at SurveySparrow — end-to-end frontend ownership. Contributed to $1M in ARR through scalable architecture, API integration, and performance engineering.",
     link: "https://thrivesparrow.com",
     tags: ["React", "TypeScript", "SaaS", "Redux Toolkit"],
+    status: "live" as const,
+  },
+  {
+    title: "Personal Blog",
+    description:
+      "Engineering and tech blog covering modern frontend development, React architecture, web performance, and lessons learned building scalable SaaS applications.",
+    link: "https://blog.nasikhcl.com",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Blog"],
     status: "live" as const,
   },
   {

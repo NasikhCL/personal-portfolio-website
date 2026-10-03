@@ -109,6 +109,7 @@ export default function RootLayout({
     sameAs: [
       "https://linkedin.com/in/nasikh-cl",
       "https://github.com/nasikhCL",
+      "https://blog.nasikhcl.com",
       "https://buymeacoffee.com/nasikhcl",
     ],
     worksFor: {

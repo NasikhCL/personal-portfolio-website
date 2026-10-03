@@ -16,10 +16,92 @@ function ProjectCard({
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
-  const CardWrapper = project.link
-    ? ({ children }: { children: React.ReactNode }) => (
+  const content = (
+    <div className="flex flex-col h-full gap-4">
+      {/* Top row: icon + status */}
+      <div className="flex items-start justify-between">
+        <Rocket
+          size={18}
+          strokeWidth={1.5}
+          style={{ color: "var(--color-text-muted)" }}
+        />
+        <span
+          className="text-xs font-mono px-2 py-1 rounded-md border"
+          style={{
+            borderColor: "var(--color-border)",
+            color: project.status === "live" ? "#4ade80" : project.status === "open" ? "#a78bfa" : "var(--color-text-muted)",
+            backgroundColor: "transparent",
+          }}
+        >
+          {project.status === "live" ? "● live" : project.status === "open" ? "◌ open" : `○ ${project.status}`}
+        </span>
+      </div>
+
+      {/* Title */}
+      <div className="flex items-center gap-2">
+        <h3
+          className="text-base font-semibold"
+          style={{
+            color: project.status === "open"
+              ? "transparent"
+              : "var(--color-text-primary)",
+            background: project.status === "open"
+              ? "linear-gradient(90deg, #a78bfa, #818cf8)"
+              : "none",
+            WebkitBackgroundClip: project.status === "open" ? "text" : "unset",
+            backgroundClip: project.status === "open" ? "text" : "unset",
+          }}
+        >
+          {project.title}
+        </h3>
+        {project.link && (
+          <span
+            className="text-sm transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            style={{ color: "var(--color-text-muted)" }}
+          >
+            ↗
+          </span>
+        )}
+      </div>
+
+      {/* Description */}
+      <p
+        className="text-sm leading-relaxed flex-1"
+        style={{ color: "var(--color-text-secondary)" }}
+      >
+        {project.description}
+      </p>
+
+      {/* Tags */}
+      <div className="flex flex-wrap gap-1.5 pt-1">
+        {project.tags.map((tag) => (
+          <span
+            key={tag}
+            className="text-xs font-mono px-2.5 py-1 rounded-md border"
+            style={{
+              borderColor: "var(--color-border-subtle)",
+              backgroundColor: "var(--color-bg)",
+              color: "var(--color-text-muted)",
+            }}
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+      className="h-full"
+    >
+      {project.link ? (
         <a
-          href={project.link!}
+          href={project.link}
           target="_blank"
           rel="noopener noreferrer"
           className="group block rounded-xl border p-6 transition-all duration-200 h-full"
@@ -36,10 +118,9 @@ function ProjectCard({
             (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border)";
           }}
         >
-          {children}
+          {content}
         </a>
-      )
-    : ({ children }: { children: React.ReactNode }) => (
+      ) : (
         <div
           className="rounded-xl border p-6 h-full"
           style={{
@@ -47,92 +128,9 @@ function ProjectCard({
             borderColor: "var(--color-border)",
           }}
         >
-          {children}
+          {content}
         </div>
-      );
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-      className="h-full"
-    >
-      <CardWrapper>
-        <div className="flex flex-col h-full gap-4">
-          {/* Top row: icon + status */}
-          <div className="flex items-start justify-between">
-            <Rocket
-              size={18}
-              strokeWidth={1.5}
-              style={{ color: "var(--color-text-muted)" }}
-            />
-            <span
-              className="text-xs font-mono px-2 py-1 rounded-md border"
-              style={{
-                borderColor: "var(--color-border)",
-                color: project.status === "live" ? "#4ade80" : project.status === "open" ? "#a78bfa" : "var(--color-text-muted)",
-                backgroundColor: "transparent",
-              }}
-            >
-              {project.status === "live" ? "● live" : project.status === "open" ? "◌ open" : `○ ${project.status}`}
-            </span>
-          </div>
-
-          {/* Title */}
-          <div className="flex items-center gap-2">
-            <h3
-              className="text-base font-semibold"
-              style={{
-                color: project.status === "open"
-                  ? "transparent"
-                  : "var(--color-text-primary)",
-                background: project.status === "open"
-                  ? "linear-gradient(90deg, #a78bfa, #818cf8)"
-                  : "none",
-                WebkitBackgroundClip: project.status === "open" ? "text" : "unset",
-                backgroundClip: project.status === "open" ? "text" : "unset",
-              }}
-            >
-              {project.title}
-            </h3>
-            {project.link && (
-              <span
-                className="text-sm transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                style={{ color: "var(--color-text-muted)" }}
-              >
-                ↗
-              </span>
-            )}
-          </div>
-
-          {/* Description */}
-          <p
-            className="text-sm leading-relaxed flex-1"
-            style={{ color: "var(--color-text-secondary)" }}
-          >
-            {project.description}
-          </p>
-
-          {/* Tags */}
-          <div className="flex flex-wrap gap-1.5 pt-1">
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-xs font-mono px-2.5 py-1 rounded-md border"
-                style={{
-                  borderColor: "var(--color-border-subtle)",
-                  backgroundColor: "var(--color-bg)",
-                  color: "var(--color-text-muted)",
-                }}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-      </CardWrapper>
+      )}
     </motion.div>
   );
 }

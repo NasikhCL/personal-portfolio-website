@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Home, Briefcase, Rocket, Layers, Mail, Coffee } from "lucide-react";
+import { Home, Briefcase, Rocket, Layers, Mail, Coffee, BookOpen } from "lucide-react";
 import Image from "next/image";
 import { profile } from "@/data/portfolio";
 import ThemeToggle from "./ThemeToggle";
@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Home", href: "#home", id: "home", Icon: Home },
   { label: "Work", href: "#work", id: "work", Icon: Briefcase },
   { label: "Projects", href: "#projects", id: "projects", Icon: Rocket },
+  { label: "Blog", href: "https://blog.nasikhcl.com", id: "blog", Icon: BookOpen, external: true },
   { label: "Skills", href: "#skills", id: "skills", Icon: Layers },
   { label: "Contact", href: "#contact", id: "contact", Icon: Mail },
 ];
@@ -75,7 +76,9 @@ export default function Sidebar() {
             <a
               key={link.href}
               href={link.href}
-              className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-200"
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noopener noreferrer" : undefined}
+              className="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-200"
               style={{
                 backgroundColor: isActive ? "var(--color-surface)" : "transparent",
                 color: isActive ? "var(--color-text-primary)" : "var(--color-text-secondary)",
@@ -95,7 +98,15 @@ export default function Sidebar() {
               }}
             >
               <link.Icon size={15} strokeWidth={isActive ? 2 : 1.5} className={`shrink-0 ${isActive ? "opacity-100" : "opacity-60"}`} />
-              <span>{link.label}</span>
+              <span className="flex-1">{link.label}</span>
+              {link.external && (
+                <span
+                  className="text-xs opacity-40 group-hover:opacity-100 transition-opacity"
+                  style={{ color: "var(--color-text-muted)" }}
+                >
+                  ↗
+                </span>
+              )}
             </a>
           );
         })}
