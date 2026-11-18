@@ -69,7 +69,7 @@ export default function Hero() {
           className="text-xs tracking-widest uppercase mb-6 font-mono"
           style={{ color: "var(--color-text-secondary)" }}
         >
-          {profile.location} · Available for work
+          {profile.location} · Open to relocation
         </motion.p>
 
         {/* Greeting */}
